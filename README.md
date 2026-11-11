@@ -1,62 +1,146 @@
-# Evangel Yoshiya Aranas — Portfolio
+<p align="center">
+  <img src="docs/readme-banner.svg" alt="Evangel Yoshiya Aranas — Developer Portfolio. Learning in public. Building with intention." width="100%" />
+</p>
 
-A responsive personal portfolio with a portrait-led hero, opposing seamless text marquees, and source-backed project content. Built with the App Router, TypeScript, Next.js **16.4.6**, React **19.3.1**, and Tailwind CSS **4.3.5**. Versions were checked against npm’s stable `latest` tags on November 11, 2026 and pinned in `package.json` / `package-lock.json`.
+<p align="center">
+  A personal space for the things I build, the ideas I explore, and the lessons I keep.
+</p>
 
-## Run locally
+<p align="center">
+  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-16.4.6-142b47?style=flat-square&amp;logo=nextdotjs&amp;logoColor=white" alt="Next.js 16.4.6" /></a>
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-19.3.1-142b47?style=flat-square&amp;logo=react&amp;logoColor=61dafb" alt="React 19.3.1" /></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-6.0.3-142b47?style=flat-square&amp;logo=typescript&amp;logoColor=3178c6" alt="TypeScript 6.0.3" /></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-4.3.5-142b47?style=flat-square&amp;logo=tailwindcss&amp;logoColor=38bdf8" alt="Tailwind CSS 4.3.5" /></a>
+</p>
 
-Use a current Node.js LTS release (Next.js requires Node 20.9 or newer) and npm.
+<p align="center">
+  <a href="#a-closer-look">Overview</a> ·
+  <a href="#run-it-locally">Run locally</a> ·
+  <a href="#selected-work">Selected work</a> ·
+  <a href="#make-it-your-own">Edit content</a> ·
+  <a href="https://www.linkedin.com/in/evangel-yoshiya-aranas-88b352414/">LinkedIn</a>
+</p>
+
+<br />
+
+![Portfolio hero featuring Evangel’s portrait in front of oversized blue and navy moving text](docs/portfolio-preview.png)
+
+<br />
+
+## A closer look
+
+A responsive portfolio built with the **Next.js App Router**, **TypeScript**, and **Tailwind CSS**. Soft blue surfaces, navy typography, and purposeful interactions keep the focus on the work.
+
+| Experience | What you’ll find |
+| :--- | :--- |
+| **Portrait-led introduction** | Oversized text moving in opposite directions behind a transparent portrait, with a pause control. |
+| **Projects you can inspect** | Category filters, keyboard-accessible project tabs, a real storefront preview, and direct repository links. |
+| **Learning in progress** | Expandable areas covering full-stack development, AI engineering, networking, cybersecurity, and computer engineering. |
+| **Credentials with sources** | 42 LinkedIn-listed entries with search, issuer filters, original titles, and credential links. |
+| **Small details that matter** | Scroll arrivals, visible keyboard focus, reduced-motion support, and clipboard feedback. |
+
+No UI framework, animation library, database, or account setup is needed to run this portfolio.
+
+## Run it locally
+
+Use a current **Node.js LTS** release and npm. Next.js requires Node.js **20.9 or newer**.
 
 ```sh
+git clone https://github.com/Yoshi-dev-mode/evangel-yoshiya-portfolio.git
+cd evangel-yoshiya-portfolio
 npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. No credentials, database, or environment variables are required.
+Open [localhost:3000](http://localhost:3000). No environment variables or credentials are required.
 
-```sh
-npm run lint
-npm run typecheck
-npm run build
-npm start
+| Command | Purpose |
+| :--- | :--- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create the production build |
+| `npm start` | Serve the production build |
+| `npm run lint` | Check code quality |
+| `npm run typecheck` | Check TypeScript types |
+
+Deploy as a standard Next.js application on a compatible Node.js host or a Next.js hosting provider.
+
+## Selected work
+
+The portfolio features these public projects. Descriptions and technologies follow their repository sources.
+
+| Project | Focus | Technologies |
+| :--- | :--- | :--- |
+| [Yoshiya Storefront](https://github.com/Yoshi-dev-mode/e-commerce-website-project) | Restaurant ordering flow with a demo checkout | Next.js · TypeScript · Supabase · PostgreSQL |
+| [Kabisera Ledger](https://github.com/Yoshi-dev-mode/kabisera-ledger) | Small-business ledger prototype and manual recordkeeping | Next.js · TypeScript · Tailwind CSS · Supabase |
+| [MediVault](https://github.com/Yoshi-dev-mode/MediVault-Group-1) | Medical record management group project | Flask · MySQL · Nginx · Ubuntu |
+| [Network Incident Investigation](https://github.com/Yoshi-dev-mode/network-incident-investigation) | Evidence-based cybersecurity training investigations | tcpdump · DNS · TCP · HTTP |
+
+## Make it your own
+
+Content, presentation, and interactions live in separate files so updates stay straightforward.
+
+```text
+app/
+  page.tsx                   Page structure and sections
+  layout.tsx                 Metadata and document layout
+  globals.css                Base styles and portrait hero
+  portfolio.css              Styles for the sections below the hero
+components/
+  hero.tsx                   Portrait, marquees, and pause control
+  project-explorer.tsx       Project filters and keyboard navigation
+  certification-explorer.tsx Certification search and issuer filters
+  learning-explorer.tsx      Expandable learning areas
+  scroll-transitions.tsx     Section arrival transitions
+  contact-actions.tsx        Contact links and copy feedback
+data/
+  portfolio.ts               Profile, projects, and learning content
+  certifications.json        The 42 profile-listed credential entries
+public/
+  images/                    Portrait and project preview
+  fonts/                     Self-hosted Manrope and its license
 ```
 
-`npm start` serves the production build. Stop a running server before starting another on the same port. Deploy as a standard Next.js application on a supported Node host or a Next.js hosting provider.
+To replace the portrait, update `public/images/portrait-cutout.png` or change the image path and alt text in `data/portfolio.ts`. Adjust its crop through `.portrait` in `app/globals.css`.
 
-## Update content
+<details>
+<summary><strong>Implementation notes</strong></summary>
 
-- `data/portfolio.ts`: profile links, portrait path/alt text, project names/descriptions, technologies, learning areas, and verified certifications.
-- `public/images/portrait-cutout.png`: the user-supplied portrait. Replace this file, or update the path and alt text in the profile data. The hero uses `next/image`, a responsive `sizes` value, and preload for its prominent image. The transparent image is cropped inside a centered frame; adjust `.portrait` object positioning if replacing it with a different crop.
-- `app/globals.css`: palette, responsive layouts, interaction states, and keyframes.
-- `app/portfolio.css`: the scoped visual and interaction system below the hero.
-- `components/project-explorer.tsx`: category filters, keyboard-accessible project tabs, real storefront preview, and workflow diagrams.
-- `components/learning-explorer.tsx`: learning disclosures and related repository links.
-- `components/contact-actions.tsx`: contact links and clipboard success/error feedback.
-- `app/layout.tsx`: page title and description.
+<br />
 
-The hero, project explorer, learning disclosures, and clipboard action are small client components. The page shell and factual content render on the server. Below-hero typography uses self-hosted Manrope with its license included in `public/fonts`; the hero keeps its original system font. No external font requests or build-time font downloads are required. Motion stops for `prefers-reduced-motion`; the hero pause control still stops both rows. The native mobile navigation works without JavaScript. See `DESIGN.md` for the below-hero design direction and asset sources.
+- **Small client components:** interactive controls run on the client; the page shell and factual content render on the server.
+- **Local typography:** Manrope is self-hosted below the hero. The hero retains its original system font, with no external font requests or build-time font downloads.
+- **Images:** `next/image` supplies responsive image delivery. The prominent portrait is preloaded, and its frame reserves layout space.
+- **Motion:** marquees can be paused, section arrivals play once, and reduced-motion preferences disable nonessential animation. Content stays visible if JavaScript is unavailable.
+- **Minimal dependencies:** interactions use React state, CSS, and Intersection Observer.
+- **Compatible tooling:** TypeScript 6 and ESLint 9 match the lint toolchain. The scripts use Next.js’s supported Webpack option after a Turbopack worker issue on the development machine.
+- **Pinned versions:** package versions were checked on November 11, 2026 and are locked in `package-lock.json`.
 
-Compatibility: TypeScript 6 is pinned because Next.js’s lint dependency does not yet support TypeScript 7. ESLint 9 matches the peer support of the bundled import/accessibility/React lint plugins. The run and build scripts explicitly select the supported Webpack bundler because Turbopack’s PostCSS worker failed to connect on this Windows/Node 25 machine. This does not change the Next.js or Tailwind versions or App Router conventions.
+</details>
 
-## Research and content limitations
+<details>
+<summary><strong>Content sources and verification</strong></summary>
 
-Public GitHub profile and repository metadata/READMEs were reviewed on November 11, 2026 using the GitHub API. The featured projects link to their repositories. Titles follow the READMEs; the original repository identifiers are retained in the data file.
+<br />
 
-| Featured project               | Source                                                                  | Supported technologies / scope                                                   |
-| ------------------------------ | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Yoshiya Storefront             | https://github.com/Yoshi-dev-mode/e-commerce-website-project#readme     | Next.js, TypeScript, Supabase, PostgreSQL; includes demo checkout                |
-| Kabisera Ledger                | https://github.com/Yoshi-dev-mode/kabisera-ledger#readme                | Next.js, TypeScript, Tailwind CSS, Supabase; prototype with manual recordkeeping |
-| MediVault                      | https://github.com/Yoshi-dev-mode/MediVault-Group-1#readme              | Flask, MySQL, Nginx, Ubuntu; group project, no individual contribution claims    |
-| Network Incident Investigation | https://github.com/Yoshi-dev-mode/network-incident-investigation#readme | tcpdump and DNS/TCP/HTTP analysis; training scenarios with qualified findings    |
+Project content comes from the [public GitHub profile](https://github.com/Yoshi-dev-mode/Yoshi-dev-mode#readme) and the linked repository READMEs. Project limitations, prototype status, and group-project context are preserved.
 
-Profile source: https://github.com/Yoshi-dev-mode/Yoshi-dev-mode#readme. No claims of employment, seniority, education, years of experience, production adoption, or measurable outcomes were added. Learning areas are interests supplied by the user, not claimed expertise.
+The certification directory was read from the user-authorized [LinkedIn certification list](https://www.linkedin.com/in/evangel-yoshiya-aranas-88b352414/details/certifications/) on November 11, 2026. All 42 entries retain their profile-listed titles, issuer labels, displayed dates, and destination links. Repeated course titles with different issuers or links remain separate entries. A missing issue date is left unspecified.
 
-LinkedIn returned HTTP 999 and search did not expose verifiable certification details. The initial public-only attempt could not verify certification details. Authenticated browser access was subsequently provided by the user. All 42 profile-listed entries are now preserved in `data/certifications.json`, with exact titles, issuer labels, displayed dates, IDs, and linked credential destinations. `components/certification-explorer.tsx` supplies search, issuer filters, selected entries, and the full list. See `data/certifications-source.md` for provenance and limitations; this is profile verification, not an independent audit of every issuer page.
+These entries were checked against the LinkedIn listing; individual issuer pages were not independently audited. Learning areas describe continued study, not asserted expertise. No employment history, outcomes, or credentials were invented.
 
-The attached Pink Rider prompt and image were treated only as visual references. Their standalone HTML instructions, identity, stock portrait URLs, pink styling, and hover-reveal effect were not applied. The user’s explicit Next.js, blue-and-white, personal-portfolio request governs this implementation. The supplied personal portrait is used instead of the earlier provisional image placeholder.
+- [Certification provenance](data/certifications-source.md)
+- [Design system and asset sources](DESIGN.md)
+- [Build checks, visual review, and known limitations](VERIFICATION.md)
+- [Official Next.js setup](https://nextjs.org/docs/app/getting-started/installation)
+- [Official Tailwind CSS setup](https://tailwindcss.com/docs/installation/framework-guides/nextjs)
 
-## Official setup references
+</details>
 
-- https://nextjs.org/docs/app/getting-started/installation
-- https://tailwindcss.com/docs/installation/framework-guides/nextjs
+---
 
-
+<p align="center">
+  <strong>Evangel Yoshiya Aranas</strong><br />
+  Learning in public. Building with intention.<br /><br />
+  <a href="https://github.com/Yoshi-dev-mode">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/evangel-yoshiya-aranas-88b352414/">LinkedIn</a>
+</p>

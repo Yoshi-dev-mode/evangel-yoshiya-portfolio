@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">Evangel Yoshiya Aranas — Developer Portfolio</title>
+  <desc id="desc">A navy and blue portfolio banner. Learning in public. Building with intention.</desc>
+  <rect width="1280" height="360" rx="16" fill="#142b47"/>
+  <circle cx="1147" cy="66" r="167" fill="none" stroke="#2a4c70"/>
+  <circle cx="1147" cy="66" r="224" fill="none" stroke="#2a4c70"/>
+  <circle cx="1147" cy="66" r="281" fill="none" stroke="#2a4c70"/>
+  <circle cx="1147" cy="66" r="338" fill="none" stroke="#2a4c70"/>
+  <circle cx="88" cy="69" r="21" fill="#285da6"/>
+  <text x="75" y="77" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="25">y.</text>
+  <text x="124" y="75" fill="#bdd8f7" font-family="Arial,Helvetica,sans-serif" font-size="16" letter-spacing="2">DEVELOPER PORTFOLIO</text>
+  <text x="64" y="159" fill="#f2f6fa" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="600" letter-spacing="-1.5">Evangel Yoshiya Aranas</text>
+  <text x="66" y="208" fill="#b9ccdf" font-family="Arial,Helvetica,sans-serif" font-size="23">Learning in public. Building with intention.</text>
+  <path d="M64 259h1152" stroke="#405872"/>
+  <text x="66" y="305" fill="#d0e4fb" font-family="Arial,Helvetica,sans-serif" font-size="16">FULL STACK</text>
+  <circle cx="192" cy="299" r="3" fill="#7799bd"/>
+  <text x="215" y="305" fill="#d0e4fb" font-family="Arial,Helvetica,sans-serif" font-size="16">AI</text>
+  <circle cx="259" cy="299" r="3" fill="#7799bd"/>
+  <text x="282" y="305" fill="#d0e4fb" font-family="Arial,Helvetica,sans-serif" font-size="16">SECURITY</text>
+  <text x="1216" y="305" text-anchor="end" fill="#b9ccdf" font-family="Arial,Helvetica,sans-serif" font-size="15">Always a work in progress.</text>
+</svg>
