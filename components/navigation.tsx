@@ -1,47 +1,37 @@
 import { profile } from "@/data/portfolio";
+import { Icon } from "./icon";
+import "./navigation.css";
 
 const links = [
   ["About", "about"],
   ["Projects", "projects"],
   ["Learning", "learning"],
+  ["Certifications", "certifications"],
+  ["Contact", "contact"],
 ];
 
 export function Navigation() {
   return (
     <header className="header">
       <div className="wrap nav-inner">
-        <a className="brand" href="#home" aria-label={`${profile.name}, home`}>
-          <span className="brand-mark" aria-hidden="true">
-            y.
-          </span>
-          <span>
-            Yoshi Aranas<span className="brand-sub">DEVELOPER IN PROGRESS</span>
-          </span>
+        <a className="site-name" href="#home" aria-label={`${profile.name}, home`}>
+          Yoshi Aranas
         </a>
-        <nav aria-label="Main navigation" className="desktop-nav">
+        <nav aria-label="Main navigation" className="site-links">
           {links.map(([label, id]) => (
             <a key={id} href={`#${id}`}>
               {label}
             </a>
           ))}
-          <a href="#certifications">Certifications</a>
         </nav>
-        <a className="button button-small" href="#contact">
-          Let’s connect <span aria-hidden="true">↗</span>
-        </a>
-        <details className="mobile-menu">
+        <details className="site-menu">
           <summary>
-            Menu <span aria-hidden="true">＋</span>
+            Menu <Icon name="plus" />
           </summary>
           <nav aria-label="Mobile navigation">
-            {[
-              ...links,
-              ["Certifications", "certifications"],
-              ["Contact", "contact"],
-            ].map(([label, id]) => (
+            {links.map(([label, id]) => (
               <a key={id} href={`#${id}`}>
                 {label}
-                <span aria-hidden="true">↗</span>
               </a>
             ))}
           </nav>

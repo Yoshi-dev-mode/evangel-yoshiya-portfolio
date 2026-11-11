@@ -1,0 +1,94 @@
+/* Navigation only; the portrait hero keeps its existing layout and typography. */
+.header .nav-inner {
+  font-family: Manrope, Arial, sans-serif;
+}
+.site-name {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+.site-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.site-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 7px;
+  transition: color 160ms, text-decoration-color 160ms;
+}
+.site-links a:hover,
+.site-links a:focus-visible {
+  color: var(--ink);
+  text-decoration-color: currentColor;
+}
+.site-links a:last-child {
+  color: var(--ink);
+}
+.site-menu {
+  display: none;
+  position: relative;
+}
+@media (max-width: 760px) {
+  .site-name {
+    font-size: 19px;
+  }
+  .site-links {
+    display: none;
+  }
+  .site-menu {
+    display: block;
+  }
+  .site-menu summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    padding-left: 12px;
+    list-style: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .site-menu summary::-webkit-details-marker {
+    display: none;
+  }
+  .site-menu summary .ui-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 180ms ease;
+  }
+  .site-menu[open] summary .ui-icon {
+    transform: rotate(45deg);
+  }
+  .site-menu nav {
+    position: absolute;
+    right: 0;
+    top: 52px;
+    width: min(300px, calc(100vw - 44px));
+    padding: 12px 20px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+  }
+  .site-menu nav a {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    font-size: 16px;
+  }
+  .site-menu nav a + a {
+    border-top: 1px solid var(--line);
+  }
+  .site-menu nav a:hover {
+    color: var(--accent);
+  }
+}
