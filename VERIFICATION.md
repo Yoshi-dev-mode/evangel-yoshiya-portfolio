@@ -55,3 +55,12 @@ Motion uses equal-width duplicated text groups for a seamless 50% translation, o
 ## Authenticated LinkedIn certification import
 
 On November 11, 2026 the user authorized reading the open LinkedIn certification page. All42 credential links were loaded from the rendered page and recorded with their exact names and issuer labels in data/certifications.json. There are42 unique destination URLs. Only IBM Full Stack Software Developer lacks a displayed issue date; no date was supplied. Repeated course titles are preserved as separate profile entries. The literal plus signs in Introduction+to+Software+Engineering are retained. Direct destination URLs are taken from the page links, not invented. Individual issuer pages were not independently audited. The earlier unverified placeholder is replaced by search, issuer filters, and selected/full-list controls. The hero file hash remains unchanged.
+
+## November 12, 2026 portfolio update
+
+Added LEBC Music Ministry Registration, LEBC Data Management System, and Botium Toys Security Assessment after reviewing public repository sources. See data/project-sources.md. Project metadata now owns category membership, workflow steps, optional imagery, and source paths; the explorer no longer assumes a fixed array index for security projects or diagrams. Data checks confirm seven unique repositories, five web-development projects, two security projects, and three populated workflow steps for every project.
+
+Added the user-supplied Google credential Assets, Threats, and Vulnerabilities (Nov 2026, KFUCQ80O8NFX), preserving its exact Coursera URL. Credential checks confirm 43 unique destination links. The new entry is included among selected credentials. The directory heading no longer implies every update came from the original LinkedIn import.
+
+Desktop 1440px and phone 390px captures in shots/project-update/ were reviewed. The expanded seven-project selector fits the mobile grid, with its final odd item spanning the row; the new credential renders with the supplied details. The layout checker still reports its template-specific screen/grid rules; no overflow/spill finding was emitted. Hero SHA-256 remains FC2C0092A8291D2A5CD4E912016D03D26833F9AE8F6B4D3D06469D8DA1A5DB0A.
+

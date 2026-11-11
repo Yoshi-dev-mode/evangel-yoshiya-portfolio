@@ -6,7 +6,7 @@ import { Icon } from "./icon";
 
 const featuredNames = [
   "IBM Full Stack Software Developer",
-  "Tools of the Trade: Linux and SQL",
+  "Assets, Threats, and Vulnerabilities",
   "Connect and Protect: Networks and Network Security",
   "Advanced RAG with Vector Databases and Retrievers",
   "Full Stack Application Development Capstone Project",
@@ -137,9 +137,8 @@ export function CertificationExplorer() {
         </a>
       </div>
       <p className="cert-source">
-        Names, issuers, dates, and links reviewed from my LinkedIn profile on
-        November 11, 2026. Separate course certificates and badges are retained
-        as listed.
+        Course certificates, badges, and professional credentials are listed
+        separately, with their original names, issuer labels, and source links.
       </p>
     </div>
   );

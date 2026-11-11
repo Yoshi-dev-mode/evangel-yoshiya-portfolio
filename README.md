@@ -31,13 +31,13 @@
 
 A responsive portfolio built with the **Next.js App Router**, **TypeScript**, and **Tailwind CSS**. Soft blue surfaces, navy typography, and purposeful interactions keep the focus on the work.
 
-| Experience | What you’ll find |
-| :--- | :--- |
-| **Portrait-led introduction** | Oversized text moving in opposite directions behind a transparent portrait, with a pause control. |
-| **Projects you can inspect** | Category filters, keyboard-accessible project tabs, a real storefront preview, and direct repository links. |
-| **Learning in progress** | Expandable areas covering full-stack development, AI engineering, networking, cybersecurity, and computer engineering. |
-| **Credentials with sources** | 42 LinkedIn-listed entries with search, issuer filters, original titles, and credential links. |
-| **Small details that matter** | Scroll arrivals, visible keyboard focus, reduced-motion support, and clipboard feedback. |
+| Experience                    | What you’ll find                                                                                                       |
+| :---------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| **Portrait-led introduction** | Oversized text moving in opposite directions behind a transparent portrait, with a pause control.                      |
+| **Projects you can inspect**  | Category filters, keyboard-accessible project tabs, a real storefront preview, and direct repository links.            |
+| **Learning in progress**      | Expandable areas covering full-stack development, AI engineering, networking, cybersecurity, and computer engineering. |
+| **Credentials with sources**  | 43 credential entries with search, issuer filters, original titles, and credential links.                              |
+| **Small details that matter** | Scroll arrivals, visible keyboard focus, reduced-motion support, and clipboard feedback.                               |
 
 No UI framework, animation library, database, or account setup is needed to run this portfolio.
 
@@ -54,13 +54,13 @@ npm run dev
 
 Open [localhost:3000](http://localhost:3000). No environment variables or credentials are required.
 
-| Command | Purpose |
-| :--- | :--- |
-| `npm run dev` | Start the development server |
-| `npm run build` | Create the production build |
-| `npm start` | Serve the production build |
-| `npm run lint` | Check code quality |
-| `npm run typecheck` | Check TypeScript types |
+| Command             | Purpose                      |
+| :------------------ | :--------------------------- |
+| `npm run dev`       | Start the development server |
+| `npm run build`     | Create the production build  |
+| `npm start`         | Serve the production build   |
+| `npm run lint`      | Check code quality           |
+| `npm run typecheck` | Check TypeScript types       |
 
 Deploy as a standard Next.js application on a compatible Node.js host or a Next.js hosting provider.
 
@@ -68,12 +68,17 @@ Deploy as a standard Next.js application on a compatible Node.js host or a Next.
 
 The portfolio features these public projects. Descriptions and technologies follow their repository sources.
 
-| Project | Focus | Technologies |
-| :--- | :--- | :--- |
-| [Yoshiya Storefront](https://github.com/Yoshi-dev-mode/e-commerce-website-project) | Restaurant ordering flow with a demo checkout | Next.js · TypeScript · Supabase · PostgreSQL |
-| [Kabisera Ledger](https://github.com/Yoshi-dev-mode/kabisera-ledger) | Small-business ledger prototype and manual recordkeeping | Next.js · TypeScript · Tailwind CSS · Supabase |
-| [MediVault](https://github.com/Yoshi-dev-mode/MediVault-Group-1) | Medical record management group project | Flask · MySQL · Nginx · Ubuntu |
-| [Network Incident Investigation](https://github.com/Yoshi-dev-mode/network-incident-investigation) | Evidence-based cybersecurity training investigations | tcpdump · DNS · TCP · HTTP |
+| Project                                                                                            | Focus                                                    | Technologies                                   |
+| :------------------------------------------------------------------------------------------------- | :------------------------------------------------------- | :--------------------------------------------- |
+| [Yoshiya Storefront](https://github.com/Yoshi-dev-mode/e-commerce-website-project)                 | Restaurant ordering flow with a demo checkout            | Next.js · TypeScript · Supabase · PostgreSQL   |
+| [Kabisera Ledger](https://github.com/Yoshi-dev-mode/kabisera-ledger)                               | Small-business ledger prototype and manual recordkeeping | Next.js · TypeScript · Tailwind CSS · Supabase |
+| [MediVault](https://github.com/Yoshi-dev-mode/MediVault-Group-1)                                   | Medical record management group project                  | Flask · MySQL · Nginx · Ubuntu                 |
+| [Network Incident Investigation](https://github.com/Yoshi-dev-mode/network-incident-investigation) | Evidence-based cybersecurity training investigations     | tcpdump · DNS · TCP · HTTP                     |
+| [LEBC Music Ministry Registration](https://github.com/Yoshi-dev-mode/LEBC-Application-Form) | Music-training and ministry application website | HTML · CSS · JavaScript · Google Forms |
+| [LEBC Data Management System](https://github.com/Yoshi-dev-mode/LEBC-data-management-system) | Searchable member directory and summary dashboard | Next.js · React · TypeScript · Recharts |
+| [Botium Toys Security Assessment](https://github.com/Yoshi-dev-mode/botium-toys-security-assessment) | Document-based educational controls and risk assessment | Risk assessment · PCI DSS · GDPR · SOC criteria |
+
+Project descriptions and source links are documented in [project sources](data/project-sources.md).
 
 ## Make it your own
 
@@ -94,7 +99,7 @@ components/
   contact-actions.tsx        Contact links and copy feedback
 data/
   portfolio.ts               Profile, projects, and learning content
-  certifications.json        The 42 profile-listed credential entries
+  certifications.json        The 43 credential entries
 public/
   images/                    Portrait and project preview
   fonts/                     Self-hosted Manrope and its license
@@ -126,7 +131,7 @@ Project content comes from the [public GitHub profile](https://github.com/Yoshi-
 
 The certification directory was read from the user-authorized [LinkedIn certification list](https://www.linkedin.com/in/evangel-yoshiya-aranas-88b352414/details/certifications/) on November 11, 2026. All 42 entries retain their profile-listed titles, issuer labels, displayed dates, and destination links. Repeated course titles with different issuers or links remain separate entries. A missing issue date is left unspecified.
 
-These entries were checked against the LinkedIn listing; individual issuer pages were not independently audited. Learning areas describe continued study, not asserted expertise. No employment history, outcomes, or credentials were invented.
+The directory also includes the user-supplied Google credential **Assets, Threats, and Vulnerabilities**, added November 12, 2026, bringing the total to **43**. The original 42 entries were checked against the LinkedIn listing; individual issuer pages were not independently audited. Learning areas describe continued study, not asserted expertise. No employment history, outcomes, or credentials were invented.
 
 - [Certification provenance](data/certifications-source.md)
 - [Design system and asset sources](DESIGN.md)

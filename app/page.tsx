@@ -129,8 +129,8 @@ export default function Home() {
             <div className="folio-heading">
               <h2 id="certifications-title">Certifications</h2>
               <p>
-                {certifications.length} entries from my LinkedIn profile, with
-                the original names, issuers, and credential links.
+                {certifications.length} credential entries with their original
+                names, issuer labels, and credential links.
               </p>
             </div>
             <CertificationExplorer />

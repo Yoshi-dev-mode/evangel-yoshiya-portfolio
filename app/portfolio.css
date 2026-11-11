@@ -480,14 +480,14 @@
   margin-top: 28px;
   color: #415f7d;
 }
-.architecture-3 {
+.architecture-security {
   background: #142b47;
   color: #d6e6f7;
 }
-.architecture-3 .diagram-label {
+.architecture-security .diagram-label {
   color: #bbcee1;
 }
-.architecture-3 .flow-node {
+.architecture-security .flow-node {
   background: #27486b;
   border-color: #829ebc;
   color: #edf5ff;
@@ -1088,5 +1088,11 @@
   }
   .cert-meta {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  .work-selector > button:last-of-type:nth-of-type(odd) {
+    grid-column: 1 / -1;
   }
 }

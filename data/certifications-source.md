@@ -1,5 +1,11 @@
 # Certification provenance
 
+## November 12, 2026 addition
+
+The user supplied one new Google credential: **Assets, Threats, and Vulnerabilities**, issued Nov 2026, credential ID **KFUCQ80O8NFX**, with destination https://www.coursera.org/account/accomplishments/verify/KFUCQ80O8NFX. These supplied details are preserved without alteration. Its issuer page was not independently audited. The directory now contains **43 entries**; the original 42-entry LinkedIn import below remains unchanged.
+
+## Original LinkedIn import
+
 All 42 entries in certifications.json were read from the user's authenticated, rendered LinkedIn certification list on November 11, 2026:
 
 https://www.linkedin.com/in/evangel-yoshiya-aranas-88b352414/details/certifications/

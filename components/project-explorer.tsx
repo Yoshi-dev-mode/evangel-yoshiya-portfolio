@@ -1,32 +1,34 @@
 "use client";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { profile, projects } from "@/data/portfolio";
+import { profile, projects, type ProjectGroup } from "@/data/portfolio";
 import { Icon } from "./icon";
 
-const categories = ["All work", "Web development", "Security"];
-const flows = [
-  ["Menu & bag", "Order validation", "PostgreSQL transaction"],
-  ["Record transaction", "Review its effect", "Reconcile balances"],
-  ["User authentication", "Patient records", "MySQL database"],
-  ["Packet & log evidence", "Protocol analysis", "Qualified findings"],
+const categories: (ProjectGroup | "All work")[] = [
+  "All work",
+  "Web development",
+  "Security",
 ];
 
 export function ProjectExplorer() {
-  const [category, setCategory] = useState("All work");
+  const [category, setCategory] = useState<ProjectGroup | "All work">(
+    "All work",
+  );
   const [selected, setSelected] = useState(0);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const visible = projects
     .map((project, index) => ({ project, index }))
     .filter(
-      ({ index }) =>
-        category === "All work" ||
-        (category === "Security" ? index === 3 : index !== 3),
+      ({ project }) => category === "All work" || project.group === category,
     );
-  function filter(next: string) {
+  function filter(next: ProjectGroup | "All work") {
     setCategory(next);
-    if (next === "Security") setSelected(3);
-    else if (next === "Web development" && selected === 3) setSelected(0);
+    if (next !== "All work" && projects[selected].group !== next) {
+      const firstMatch = projects.findIndex(
+        (project) => project.group === next,
+      );
+      if (firstMatch >= 0) setSelected(firstMatch);
+    }
   }
   return (
     <div className="work-explorer">
@@ -109,27 +111,27 @@ export function ProjectExplorer() {
                   key={`${category}-${selected}`}
                 >
                   <div className="work-visual">
-                    {index === 0 ? (
+                    {project.image ? (
                       <a
                         href={`${profile.github}/${project.repository}`}
-                        aria-label="View Yoshiya Storefront repository"
+                        aria-label={`View ${project.title} repository`}
                       >
                         <Image
-                          src="/images/projects/storefront.webp"
-                          alt="Yoshiya Storefront homepage showing its restaurant menu and ordering interface"
-                          width={1440}
-                          height={900}
+                          src={project.image.src}
+                          alt={project.image.alt}
+                          width={project.image.width}
+                          height={project.image.height}
                           sizes="(max-width: 760px) 90vw, 58vw"
                         />
                       </a>
                     ) : (
                       <div
-                        className={`architecture architecture-${index}`}
+                        className={`architecture ${project.group === "Security" ? "architecture-security" : ""}`}
                         aria-label={`${project.title} project workflow`}
                       >
                         <Icon name="code" />
                         <ol>
-                          {flows[index].map((step, stepIndex) => (
+                          {project.workflow.map((step, stepIndex) => (
                             <li key={step}>
                               <span className="flow-node" aria-hidden="true">
                                 {stepIndex + 1}
@@ -139,7 +141,7 @@ export function ProjectExplorer() {
                           ))}
                         </ol>
                         <span className="diagram-label">
-                          {index === 3
+                          {project.group === "Security"
                             ? "Investigation workflow"
                             : "Project workflow"}
                         </span>
@@ -151,15 +153,16 @@ export function ProjectExplorer() {
                       <h3>{project.title}</h3>
                       <a
                         className="work-source"
-                        href={`${profile.github}/${project.repository}/blob/HEAD/README.md`}
+                        href={`${profile.github}/${project.repository}/blob/HEAD/${project.sourcePath || "README.md"}`}
                       >
-                        README <Icon name="arrow" />
+                        {project.sourcePath ? "Source" : "README"}{" "}
+                        <Icon name="arrow" />
                       </a>
                     </div>
                     <p>{project.description}</p>
                     <ul
                       className="work-technologies"
-                      aria-label="Project technologies"
+                      aria-label="Project tools and topics"
                     >
                       {project.technologies.map((tech) => (
                         <li key={tech}>{tech}</li>
