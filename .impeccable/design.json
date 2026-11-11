@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T00:00:00+08:00",
+  "title": "Design System: Evangel Yoshiya Aranas Portfolio",
+  "extensions": {
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Below-hero movement easing."
+      },
+      {
+        "name": "project-select",
+        "value": "300ms",
+        "purpose": "Selected project clip-path inset(0 0 7% 0) to inset(0), opacity 0.65 to 1."
+      },
+      {
+        "name": "controls",
+        "value": "180ms–200ms",
+        "purpose": "Local hover, press, icon and selection feedback."
+      },
+      {
+        "name": "disclosure",
+        "value": "180ms ease-out",
+        "purpose": "Learning content opacity 0.5 to 1; no dimension animation."
+      },
+      {
+        "name": "screenshot-hover",
+        "value": "600ms",
+        "purpose": "Bounded storefront scale to 1.025."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet-max",
+        "value": "1100px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "760px"
+      },
+      {
+        "name": "large-visual",
+        "value": "min-width: 1100px and min-height: 850px"
+      }
+    ],
+    "focus": {
+      "default": "3px solid var(--folio-blue); outline-offset: 5px",
+      "clippedScreenshot": "outline-offset: -5px"
+    },
+    "reducedMotion": "Disable below-hero animations and transitions; no scroll reveals.",
+    "scope": "Below-hero only; Hero.tsx and globals.css unchanged.",
+    "verification": "Independent finish reviewer: ship; both requested fixes resolved. Focus fix source-verified without focused-state capture; updated desktop capture confirms spacing. Production build, lint and typecheck pass. Responsive captures: 1440/1024/820/768/390px; template-specific viewport/grid findings, intentionally accepted content-height/two-column layouts, no clean automated layout verdict. Consistency checker stopped before completion; detector unavailable after launcher setup failure."
+  },
+  "components": [],
+  "narrative": {
+    "overview": "Preserve the blue-white and navy identity with editorial typography, source-linked project evidence, and direct contact actions. Experience mode uses bounded interactions to inspect existing work.",
+    "keyCharacteristics": [
+      "Pale blue surfaces and navy ink",
+      "Inline project explorer",
+      "Explicit selected, focus, expanded and clipboard feedback states"
+    ],
+    "rules": [
+      {
+        "name": "Content truth",
+        "body": "Source facts remain in data/portfolio.ts; 42 certification entries match the authenticated LinkedIn listing, with provenance in data/certifications-source.md.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Preserve the hero and navigation",
+      "Keep source links visible",
+      "Preserve asset provenance in DESIGN.md"
+    ],
+    "donts": [
+      "Do not invent expertise or credentials",
+      "Do not fabricate screenshots",
+      "Do not add scroll reveals or disclosure dimension animation"
+    ]
+  }
+}
+
