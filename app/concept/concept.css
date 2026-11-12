@@ -1,0 +1,248 @@
+@font-face {
+  font-family: ConceptManrope;
+  src: url("/fonts/manrope-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+.concept-page {
+  min-height: 100svh;
+  background: #edf2f7;
+  color: #142b47;
+  font-family: ConceptManrope, Arial, sans-serif;
+  padding: 0 clamp(20px, 4vw, 64px) 24px;
+}
+.concept-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid #cad5e1;
+  font-size: 12px;
+}
+.concept-header a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.concept-header span:last-child {
+  color: #52677d;
+}
+.concept-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 32px;
+  padding: 40px 0 28px;
+}
+.concept-intro h1 {
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+.concept-intro p {
+  font-size: 14px;
+  color: #52677d;
+  line-height: 1.7;
+  max-width: 310px;
+  margin: 0;
+}
+.film-stage {
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+  background: #e5ecf3;
+  border: 1px solid #c9d5e1;
+  border-radius: 6px;
+  isolation: isolate;
+}
+.film-canvas {
+  position: absolute;
+  inset: 0;
+}
+.film-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.film-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #52677d;
+  font-size: 14px;
+  padding: 24px;
+  text-align: center;
+}
+.film-stage-label {
+  position: absolute;
+  left: 24px;
+  top: 22px;
+  font-size: 11px;
+  color: #4a6480;
+  pointer-events: none;
+  letter-spacing: 0.03em;
+}
+.film-section-label {
+  position: absolute;
+  right: 24px;
+  bottom: 20px;
+  font-size: 12px;
+  color: #415c78;
+  pointer-events: none;
+  background: #edf2f7d9;
+  padding: 8px 12px;
+  border-radius: 3px;
+}
+.film-controls {
+  display: grid;
+  grid-template-columns: auto minmax(120px, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #cad5e1;
+}
+.film-buttons {
+  display: flex;
+  gap: 8px;
+}
+.film-controls button {
+  font: inherit;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid #a9bed3;
+  color: #142b47;
+  background: transparent;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition:
+    background 160ms,
+    transform 160ms;
+}
+.film-controls .film-play {
+  background: #142b47;
+  color: #f2f6fa;
+  border-color: #142b47;
+  min-width: 100px;
+}
+.film-controls button:hover {
+  background: #d6e2ee;
+  transform: translateY(-1px);
+}
+.film-controls .film-play:hover {
+  background: #244665;
+}
+.film-controls button:active {
+  transform: translateY(1px);
+}
+.film-controls button:disabled {
+  opacity: 0.45;
+  cursor: default;
+  transform: none;
+}
+.film-scrubber {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+  color: #52677d;
+}
+.film-scrubber input {
+  width: 100%;
+  height: 24px;
+  accent-color: #285da6;
+  cursor: pointer;
+}
+.film-time {
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  color: #52677d;
+  white-space: nowrap;
+}
+.film-instructions {
+  font-size: 12px;
+  color: #52677d;
+  margin: 14px 0 0;
+  line-height: 1.7;
+}
+.concept-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 0 0;
+  border: 0;
+  color: #52677d;
+  font-size: 11px;
+  margin: 0;
+}
+.concept-footer p {
+  margin: 0;
+  line-height: 1.7;
+}
+.concept-page :focus-visible {
+  outline: 3px solid #285da6;
+  outline-offset: 5px;
+}
+@media (max-width: 700px) {
+  .concept-header {
+    font-size: 11px;
+    gap: 12px;
+    padding: 12px 0;
+  }
+  .concept-header span:nth-child(2) {
+    display: none;
+  }
+  .concept-intro {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 28px;
+  }
+  .concept-intro p {
+    font-size: 13px;
+  }
+  .film-controls {
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+  }
+  .film-scrubber {
+    grid-row: 2;
+    grid-column: 1/-1;
+  }
+  .film-buttons {
+    flex: 1;
+  }
+  .film-controls button {
+    padding: 10px 14px;
+  }
+  .film-stage-label {
+    top: 12px;
+    left: 12px;
+    font-size: 9px;
+  }
+  .film-section-label {
+    bottom: 10px;
+    right: 10px;
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+  .concept-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .film-instructions {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .concept-page * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
