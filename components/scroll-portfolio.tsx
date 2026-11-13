@@ -27,13 +27,23 @@ export function ScrollPortfolio({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const syncPreference = () => {
-      const deepLink = window.location.hash && window.location.hash !== "#home";
-      setActive(!preference.matches && !failed.current && !deepLink);
+      setActive(!preference.matches && !failed.current);
     };
     syncPreference();
     preference.addEventListener("change", syncPreference);
     return () => preference.removeEventListener("change", syncPreference);
   }, []);
+
+  useEffect(() => {
+    if (!active || !window.location.hash) return;
+    // Inserting the story changes section positions. Keep the requested anchor
+    // in view without disabling the story for later scrolling back to the hero.
+    const frame = requestAnimationFrame(() => {
+      const destination = document.getElementById(window.location.hash.slice(1));
+      destination?.scrollIntoView({ behavior: "instant", block: "start" });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [active]);
 
   useEffect(() => {
     if (!active || !root.current || !track.current) return;
