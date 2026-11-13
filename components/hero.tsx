@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { profile } from "@/data/portfolio";
+import { PortraitGaze } from "./portrait-gaze";
 
 function MarqueeRow({
   text,
@@ -50,6 +51,7 @@ export function Hero() {
           preload
           className="portrait"
         />
+        <PortraitGaze src={profile.portrait} paused={paused} />
       </div>
       <div className="hero-bottom wrap">
         <a className="scroll-link" href="#about">
@@ -60,7 +62,7 @@ export function Hero() {
           onClick={() => setPaused(!paused)}
           aria-pressed={paused}
           aria-label={
-            paused ? "Resume moving hero text" : "Pause moving hero text"
+            paused ? "Resume hero motion" : "Pause hero motion"
           }
         >
           <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>{" "}
